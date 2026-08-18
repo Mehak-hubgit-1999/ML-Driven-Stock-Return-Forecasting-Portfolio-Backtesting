@@ -1,0 +1,95 @@
+2026-02-23 23:44:38,594 - src.utils.helpers - INFO - Configuration loaded from config/config.yaml
+2026-02-23 23:44:39,250 - src.utils.helpers - INFO - Random seed set to 42
+2026-02-23 23:44:39,252 - main - INFO - ============================================================
+2026-02-23 23:44:39,253 - main - INFO - MULTI-DIMENSIONAL RETURN FORECASTING PIPELINE
+2026-02-23 23:44:39,253 - main - INFO - ============================================================
+2026-02-23 23:44:39,253 - main - INFO - Config: config/config.yaml
+2026-02-23 23:44:39,253 - main - INFO - Tickers: RELIANCE.NS, HDFCBANK.NS, INFY.NS, M&M.NS, BHARTIARTL.NS, HINDUNILVR.NS
+2026-02-23 23:44:39,253 - main - INFO - Date range: 2020-01-01 → 2025-12-31
+2026-02-23 23:44:39,433 - main - INFO - ============================================================
+2026-02-23 23:44:39,433 - main - INFO - STAGE 1: DATA COLLECTION
+2026-02-23 23:44:39,433 - main - INFO - ============================================================
+2026-02-23 23:44:39,433 - main - INFO - Fetching market data...
+2026-02-23 23:44:39,433 - src.data.market_data - INFO - MarketDataFetcher initialised – 6 tickers, range 2020-01-01 to 2025-12-31
+2026-02-23 23:44:39,446 - src.data.market_data - INFO - Fetching RELIANCE.NS (attempt 1/3) for 2020-01-01 → 2025-12-31
+2026-02-23 23:44:40,486 - src.data.market_data - WARNING - RELIANCE.NS: 1 zero-volume trading days detected
+2026-02-23 23:44:40,487 - src.data.market_data - INFO - Successfully fetched RELIANCE.NS – 1486 rows, 2020-01-01 → 2025-12-30
+2026-02-23 23:44:40,527 - src.data.market_data - INFO - Saved RELIANCE.NS OHLCV data → data/raw/market/RELIANCE.NS_ohlcv.parquet
+2026-02-23 23:44:40,527 - src.data.market_data - INFO - Fetching HDFCBANK.NS (attempt 1/3) for 2020-01-01 → 2025-12-31
+2026-02-23 23:44:40,870 - src.data.market_data - WARNING - HDFCBANK.NS: 1 zero-volume trading days detected
+2026-02-23 23:44:40,871 - src.data.market_data - INFO - Successfully fetched HDFCBANK.NS – 1486 rows, 2020-01-01 → 2025-12-30
+2026-02-23 23:44:40,873 - src.data.market_data - INFO - Saved HDFCBANK.NS OHLCV data → data/raw/market/HDFCBANK.NS_ohlcv.parquet
+2026-02-23 23:44:40,873 - src.data.market_data - INFO - Fetching INFY.NS (attempt 1/3) for 2020-01-01 → 2025-12-31
+2026-02-23 23:44:41,253 - src.data.market_data - WARNING - INFY.NS: 1 zero-volume trading days detected
+2026-02-23 23:44:41,253 - src.data.market_data - INFO - Successfully fetched INFY.NS – 1486 rows, 2020-01-01 → 2025-12-30
+2026-02-23 23:44:41,257 - src.data.market_data - INFO - Saved INFY.NS OHLCV data → data/raw/market/INFY.NS_ohlcv.parquet
+2026-02-23 23:44:41,257 - src.data.market_data - INFO - Fetching M&M.NS (attempt 1/3) for 2020-01-01 → 2025-12-31
+2026-02-23 23:44:41,686 - src.data.market_data - WARNING - M&M.NS: 2 zero-volume trading days detected
+2026-02-23 23:44:41,687 - src.data.market_data - INFO - Successfully fetched M&M.NS – 1486 rows, 2020-01-01 → 2025-12-30
+2026-02-23 23:44:41,690 - src.data.market_data - INFO - Saved M&M.NS OHLCV data → data/raw/market/M&M.NS_ohlcv.parquet
+2026-02-23 23:44:41,690 - src.data.market_data - INFO - Fetching BHARTIARTL.NS (attempt 1/3) for 2020-01-01 → 2025-12-31
+2026-02-23 23:44:42,584 - src.data.market_data - WARNING - BHARTIARTL.NS: 1 zero-volume trading days detected
+2026-02-23 23:44:42,585 - src.data.market_data - INFO - Successfully fetched BHARTIARTL.NS – 1486 rows, 2020-01-01 → 2025-12-30
+2026-02-23 23:44:42,588 - src.data.market_data - INFO - Saved BHARTIARTL.NS OHLCV data → data/raw/market/BHARTIARTL.NS_ohlcv.parquet
+2026-02-23 23:44:42,588 - src.data.market_data - INFO - Fetching HINDUNILVR.NS (attempt 1/3) for 2020-01-01 → 2025-12-31
+2026-02-23 23:44:43,139 - src.data.market_data - WARNING - HINDUNILVR.NS: 1 zero-volume trading days detected
+2026-02-23 23:44:43,140 - src.data.market_data - INFO - Successfully fetched HINDUNILVR.NS – 1486 rows, 2020-01-01 → 2025-12-30
+2026-02-23 23:44:43,144 - src.data.market_data - INFO - Saved HINDUNILVR.NS OHLCV data → data/raw/market/HINDUNILVR.NS_ohlcv.parquet
+2026-02-23 23:44:43,144 - src.data.market_data - INFO - Fetched OHLCV data for 6 / 6 tickers
+2026-02-23 23:44:43,159 - src.data.market_data - INFO - Saved processed market data → data/processed/market_processed.parquet
+2026-02-23 23:44:43,159 - main - INFO - Market data fetched for 6 tickers in 3.7s
+2026-02-23 23:44:43,159 - main - INFO - Fetching fundamental data...
+2026-02-23 23:44:43,159 - src.data.fundamental_data - INFO - FundamentalDataFetcher initialised – 6 tickers
+2026-02-23 23:44:43,159 - src.data.fundamental_data - INFO - Fetching fundamentals for RELIANCE.NS
+2026-02-23 23:44:44,654 - src.data.fundamental_data - INFO - yfinance provided 6 quarterly records for RELIANCE.NS
+2026-02-23 23:44:44,656 - src.data.fundamental_data - INFO - Saved RELIANCE.NS fundamentals → data/raw/fundamental/RELIANCE.NS_fundamentals.parquet
+2026-02-23 23:44:44,657 - src.data.fundamental_data - INFO - Fetching fundamentals for HDFCBANK.NS
+2026-02-23 23:44:45,431 - src.data.fundamental_data - INFO - yfinance provided 5 quarterly records for HDFCBANK.NS
+2026-02-23 23:44:45,434 - src.data.fundamental_data - INFO - Saved HDFCBANK.NS fundamentals → data/raw/fundamental/HDFCBANK.NS_fundamentals.parquet
+2026-02-23 23:44:45,435 - src.data.fundamental_data - INFO - Fetching fundamentals for INFY.NS
+2026-02-23 23:44:46,538 - src.data.fundamental_data - INFO - yfinance provided 7 quarterly records for INFY.NS
+2026-02-23 23:44:46,540 - src.data.fundamental_data - INFO - Saved INFY.NS fundamentals → data/raw/fundamental/INFY.NS_fundamentals.parquet
+2026-02-23 23:44:46,540 - src.data.fundamental_data - INFO - Fetching fundamentals for M&M.NS
+2026-02-23 23:44:47,528 - src.data.fundamental_data - INFO - yfinance provided 6 quarterly records for M&M.NS
+2026-02-23 23:44:47,530 - src.data.fundamental_data - INFO - Saved M&M.NS fundamentals → data/raw/fundamental/M&M.NS_fundamentals.parquet
+2026-02-23 23:44:47,530 - src.data.fundamental_data - INFO - Fetching fundamentals for BHARTIARTL.NS
+2026-02-23 23:44:48,481 - src.data.fundamental_data - INFO - yfinance provided 6 quarterly records for BHARTIARTL.NS
+2026-02-23 23:44:48,483 - src.data.fundamental_data - INFO - Saved BHARTIARTL.NS fundamentals → data/raw/fundamental/BHARTIARTL.NS_fundamentals.parquet
+2026-02-23 23:44:48,483 - src.data.fundamental_data - INFO - Fetching fundamentals for HINDUNILVR.NS
+2026-02-23 23:44:49,329 - src.data.fundamental_data - INFO - yfinance provided 6 quarterly records for HINDUNILVR.NS
+2026-02-23 23:44:49,337 - src.data.fundamental_data - INFO - Saved HINDUNILVR.NS fundamentals → data/raw/fundamental/HINDUNILVR.NS_fundamentals.parquet
+2026-02-23 23:44:49,337 - src.data.fundamental_data - INFO - Fetched fundamentals for 6 / 6 tickers
+2026-02-23 23:44:49,340 - src.data.fundamental_data - INFO - Saved processed fundamental data → data/processed/fundamental_processed.parquet
+2026-02-23 23:44:49,341 - main - INFO - Fundamental data fetched for 6 tickers in 6.2s
+2026-02-23 23:44:49,341 - main - INFO - Fetching macro indicators...
+2026-02-23 23:44:49,341 - src.data.macro_data - INFO - MacroDataFetcher initialised – range 2020-01-01 to 2025-12-31
+2026-02-23 23:44:49,341 - src.data.macro_data - INFO - Fetching USD/INR exchange rate via INR=X (attempt 1/3)
+2026-02-23 23:44:49,677 - src.data.macro_data - INFO - Successfully fetched USD/INR exchange rate – 1561 rows
+2026-02-23 23:44:49,678 - src.data.macro_data - INFO - Collected USD_INR – 1561 rows
+2026-02-23 23:44:49,678 - src.data.macro_data - INFO - Fetching Crude Oil futures (CL=F) via CL=F (attempt 1/3)
+2026-02-23 23:44:50,013 - src.data.macro_data - INFO - Successfully fetched Crude Oil futures (CL=F) – 1509 rows
+2026-02-23 23:44:50,013 - src.data.macro_data - INFO - Collected Crude_Oil – 1509 rows
+2026-02-23 23:44:50,013 - src.data.macro_data - INFO - Fetching Gold futures (GC=F) via GC=F (attempt 1/3)
+2026-02-23 23:44:50,228 - src.data.macro_data - INFO - Successfully fetched Gold futures (GC=F) – 1509 rows
+2026-02-23 23:44:50,228 - src.data.macro_data - INFO - Collected Gold – 1509 rows
+2026-02-23 23:44:50,229 - src.data.macro_data - INFO - Fetching NIFTY 50 index via ^NSEI (attempt 1/3)
+2026-02-23 23:44:50,458 - src.data.macro_data - INFO - Successfully fetched NIFTY 50 index – 1485 rows
+2026-02-23 23:44:50,458 - src.data.macro_data - INFO - Collected Nifty50 – 1485 rows
+2026-02-23 23:44:50,458 - src.data.macro_data - INFO - Fetching India VIX via ^INDIAVIX (attempt 1/3)
+2026-02-23 23:44:50,701 - src.data.macro_data - INFO - Successfully fetched India VIX – 1469 rows
+2026-02-23 23:44:50,701 - src.data.macro_data - INFO - Collected India_VIX – 1469 rows
+2026-02-23 23:44:50,702 - src.data.macro_data - INFO - Fetching India 10Y bond yield proxy via ^IRX (attempt 1/3)
+2026-02-23 23:44:50,952 - src.data.macro_data - INFO - Successfully fetched India 10Y bond yield proxy – 1507 rows
+2026-02-23 23:44:50,952 - src.data.macro_data - INFO - Collected Bond_Yield_10Y – 1507 rows
+2026-02-23 23:44:50,952 - src.data.macro_data - INFO - Generating synthetic inflation proxy data
+2026-02-23 23:44:50,956 - src.data.macro_data - INFO - Generated inflation proxy – 2192 daily records
+2026-02-23 23:44:50,956 - src.data.macro_data - INFO - Collected Inflation – 2192 rows
+2026-02-23 23:44:50,967 - src.data.macro_data - INFO - Saved merged macro indicators → data/raw/macro/macro_indicators.parquet (2192 rows, 7 cols)
+2026-02-23 23:44:50,973 - src.data.macro_data - INFO - Saved processed macro data → data/processed/macro_processed.parquet
+2026-02-23 23:44:50,973 - main - INFO - Macro data fetched (2192 rows) in 1.6s
+2026-02-23 23:44:50,974 - main - INFO - Fetching sentiment data...
+2026-02-23 23:44:50,974 - src.data.sentiment_data - INFO - SentimentDataFetcher initialised – 6 tickers, model=ProsusAI/finbert
+2026-02-23 23:44:57,880 - src.data.sentiment_data - INFO - Falling back to synthetic headlines for RELIANCE.NS
+2026-02-23 23:44:57,917 - src.data.sentiment_data - INFO - Generated 5425 synthetic headlines for RELIANCE.NS (2020-01-01 → 2025-12-31)
+2026-02-23 23:45:00,570 - src.data.sentiment_data - INFO - Loading FinBERT model: ProsusAI/finbert …
+2026-02-23 23:45:03,147 - src.data.sentiment_data - INFO - FinBERT model loaded successfully
